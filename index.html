@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Stake Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script src="index.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .game-container {
+            margin-top: 50px;
+        }
+        .simon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 100px);
+            gap: 20px;
+            justify-content: center;
+            margin: 30px auto;
+        }
+        .simon-button {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        .red { background-color: red; }
+        .green { background-color: green; }
+        .blue { background-color: blue; }
+        .yellow { background-color: yellow; }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <button id="claimTokens">Claim Initial 100 MemeCoins</button>
+    <p id="message"></p>
+    <div class="stats">
+        <div><strong>Your MemeCoin Balance:</strong> <span id="balance">Loading...</span></div>
+        <div><strong>Your Current Stake:</strong> <span id="stake">Loading...</span></div>
+        <div><strong>Your Potential Winnings:</strong> <span id="winnings">Loading...</span></div>
+    </div>    
+    <h1>Simon Stake Game</h1>
+    <p>Stake Meme Coins and win big by completing Simon levels!</p>
+    <div class="game-container">
+        <button id="startGame">Start Game</button>
+        <button id="advanceLevel" disabled>Advance Level (Stake More)</button>
+        <button id="withdraw" disabled>Withdraw Winnings</button>
+    </div>
+    <div class="simon-grid hidden" id="simonGrid">
+        <div class="simon-button red" id="red"></div>
+        <div class="simon-button green" id="green"></div>
+        <div class="simon-button blue" id="blue"></div>
+        <div class="simon-button yellow" id="yellow"></div>
+    </div>
+    <p id="message"></p>
+</body>
+</html>
